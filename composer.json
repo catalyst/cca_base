@@ -1,8 +1,8 @@
 {
-    "name": "drupal/bootstrap_sass",
+    "name": "islandora/cca_base",
     "type": "drupal-theme",
-    "description": "SASS subtheme for Barrio Theme.",
-    "homepage": "http://drupal.org/project/bootstrap_sass",
+    "description": "Catalyst Community Archives Islandora Base Theme",
+    "homepage": "https://gitlab.catalyst.net.nz/islandora/cca-base",
     "license": "GPL-2.0+",
     "require": {
         "drupal/bootstrap_barrio": "^4.8.0"
