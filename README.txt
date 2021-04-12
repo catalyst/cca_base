@@ -1,1 +1,9 @@
-Bootstrap 4 - Barrio SASS Starter Kit
+# Catalyst Islandora base theme
+
+## Setup
+
+* Subtheme starter kit
+
+## Features / Pages
+
+* Block layout
