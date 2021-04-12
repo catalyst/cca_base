@@ -54,7 +54,7 @@ function cca_base_form_system_theme_settings_alter(&$form, FormStateInterface $f
 function cca_base_preprocess_views_view_fields(&$variables) {
   if (isset($variables['fields']['cca_ui_related_thumbnail'])) {
     // Remove comments and trim white spaces from the markup.
-    // If it's not empty, then the thumbnail exists. 
+    // If it's not empty, then the thumbnail exists.
     $variables['hasThumbnail'] = false;
     if (method_exists($variables['fields']['cca_ui_related_thumbnail']->content, '__toString')) {
       $markup = $variables['fields']['cca_ui_related_thumbnail']->content->__toString();
@@ -70,7 +70,30 @@ function cca_base_preprocess_views_view_fields(&$variables) {
  * Remove (RiC-.*) from labels
  */
 function cca_base_preprocess_field(&$variables) {
-  $element = $variables['element'];
   $variables['label_full'] = $variables['label'];
   $variables['label'] = preg_replace('/ \(RiC-.*\)/', '', $variables['label']);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Via https://www.flocondetoile.fr/blog/customizing-breadcrumb-trail-drupal-8
+ */
+function cca_base_preprocess_breadcrumb(&$variables) {
+  $request = \Drupal::request();
+  $route_match = \Drupal::routeMatch();
+  $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+
+  $variables['#cache']['contexts'][] = 'url';
+  if (count($variables['breadcrumb']) <= 1) {
+    $variables['breadcrumb'] = [];
+  }
+  else {
+    $breadcrumb_title = 1; //theme_get_setting('breadcrumb_title');
+    if ($breadcrumb_title) {
+      $variables['breadcrumb'][] = array(
+        'text' => $page_title
+      );
+    }
+  }
 }

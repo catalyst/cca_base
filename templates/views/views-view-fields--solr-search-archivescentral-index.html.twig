@@ -35,7 +35,7 @@
 {% set entity = row._object.getValue() %}
 {# {% set url = entity.toUrl().toString() %} #}
 {# Define what shouldn't be displayed in extra fields table #}
-{% 
+{%
   set other_fields = fields|without(
     'counter',
     'cca_ui_related_thumbnail',
@@ -57,12 +57,14 @@
 <div class="row">
   {% if hasThumbnail %}
     <div class="search-thumbnail col-12 col-md-3">
+      <a href="{{ entity.toUrl().toString() }}" title="View {{ entity.label }}">
       {# {% if entity.bundle == "ac_record" %} #}
         {{ views_view_fields.render_field(fields.cca_ui_related_thumbnail) }}
         {{ views_view_fields.render_field(fields.field_media_image) }}
       {# {% else %} #}
         {# <img src="{{ theme_path }}/images/placeholder.png" alt="no image" /> #}
       {# {% endif %} #}
+      </a>
     </div>
   {% endif %}
 
