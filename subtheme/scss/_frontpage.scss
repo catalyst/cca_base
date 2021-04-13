@@ -1,0 +1,40 @@
+.view.view-ac-ta-archives {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  .views-row {
+    border-bottom: 0;
+  }
+
+  .views-field-label {
+    display: none;
+  }
+}
+
+.block.block-ac-home-block {
+  margin-top: 2rem;
+  border-color: $border-color;
+  background-color: $gray-100;
+}
+
+#block-acresourcecount {
+  h2,
+  .list-group-item {
+    border: none;
+  }
+}
+
+.sidebar .block {
+  border-color: $border-color;
+  background-color: $gray-100;
+
+  h2,
+  .list-group-item {
+    border: 0;
+    background-color: inherit;
+  }
+}
+
+.block.block-ac-home-block {
+  margin-top: 2rem;
+}

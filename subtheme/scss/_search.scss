@@ -1,0 +1,33 @@
+.search-main {
+  margin-bottom: 1rem;
+}
+
+.search-thumbnail img {
+  margin-bottom: 0;
+}
+
+.sidebar .block.block-facets {
+  border-color: $border-color;
+  background-color: $gray-100;
+}
+
+.block-facets {
+  &:first-of-type {
+    margin-top: 4rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+
+    .facets-checkbox {
+      margin-right: 5px;
+    }
+  }
+
+  .facet-item {
+    display: flex;
+    align-items: baseline;
+  }
+}

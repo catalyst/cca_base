@@ -1,0 +1,35 @@
+name: CCA Islandora Subtheme Starter Kit
+type: theme
+description: 'SASS starter kit for a CCA Islandora Subtheme.'
+version: 8.x-0.1
+core: 8.x
+base theme: cca_base
+
+libraries:
+  - cca_subtheme/global-styling
+libraries-override:
+  cca_base/global-styling: false
+regions:
+  top_header: 'Top header'
+  top_header_form: 'Top header form'
+  header: Header
+  header_form: 'Header form'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: Highlighted
+  featured_top: 'Featured top'
+  breadcrumb: Breadcrumb
+  content: Content
+  content_footer: 'Content footer'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  featured_bottom_first: 'Featured bottom first'
+  featured_bottom_second: 'Featured bottom second'
+  featured_bottom_third: 'Featured bottom third'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+  footer_fifth: 'Footer fifth'
