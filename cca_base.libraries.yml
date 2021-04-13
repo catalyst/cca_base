@@ -1,8 +1,6 @@
 global-styling:
   version: VERSION
   js:
-    js/popper.min.js: {}
-    js/bootstrap.min.js: {}
     js/global.js: {}
   css:
     component:
@@ -10,6 +8,10 @@ global-styling:
   dependencies:
     - core/jquery
     - core/drupal
+
+bootstrap:
+  js:
+    js/bootstrap.bundle.min.js: {} # includes popper
 
 fullscreen:
   version: 0.0.1
