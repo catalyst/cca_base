@@ -20,6 +20,7 @@ if [[ ! -e ../../../custom ]]; then
 fi
 cd ../../../custom
 cp -r ../contrib/cca_base/subtheme $CUSTOM_ISLANDORA
+cp -r ../contrib/cca_base/scss $CUSTOM_ISLANDORA
 cd $CUSTOM_ISLANDORA
 for file in *cca_subtheme.*; do mv $file ${file//cca_subtheme/$CUSTOM_ISLANDORA}; done
 for file in config/*/*cca_subtheme.*; do mv $file ${file//cca_subtheme/$CUSTOM_ISLANDORA}; done

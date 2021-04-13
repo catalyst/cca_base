@@ -47,6 +47,10 @@ Compiles scss to css.
 
 Compiles scss to css, then watchs for scss changes and recompiles automatically.
 
+### Enable subtheme
+
+Once you have finished creating your SubTheme, enable it in `/admin/appearance`.
+
 ## Features / Pages
 
 - Block layout
