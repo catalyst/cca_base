@@ -17,8 +17,7 @@
    ]
    ```
 
-1. Run `composer require islandora/cca_base`
-1. Credentials are stored in `pview -d devs sfu`
+1. Run `composer require islandora/cca_base`. You will be asked for username and password. Find them in `pview -d devs sfu`.
 
 ### Create subtheme
 
@@ -27,14 +26,14 @@
    ```bash
    chmod +x scripts/create_subtheme.sh
    ```
-1. Run script with interactive prompts
+1. Run script. You will be asked to enter the subtheme name. The subtheme will be created under `themes/custom/{subtheme_name}`.
    ```bash
    ./scripts/create_subtheme.sh
    ```
 
 ### Enable subtheme
 
-Once you have finished creating your SubTheme, enable it in `/admin/appearance`.
+Once you have finished creating your subtheme, enable it in `/admin/appearance`.
 
 ### Updating base theme
 
