@@ -43,7 +43,7 @@
 
 Compiles scss to css.
 
-#### `gulp watch`
+#### `gulp styles:watch`
 
 Compiles scss to css, then watchs for scss changes and recompiles automatically.
 

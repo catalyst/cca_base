@@ -94,6 +94,6 @@ const build = gulp.series(styles, gulp.parallel(js, serve))
 exports.styles = styles
 exports.js = js
 exports.serve = serve
-exports.watch = gulp.series(styles, watch)
+exports['styles:watch'] = gulp.series(styles, watch)
 
 exports.default = build
