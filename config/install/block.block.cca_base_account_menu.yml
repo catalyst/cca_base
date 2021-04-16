@@ -10,7 +10,7 @@ dependencies:
 id: cca_base_account_menu
 theme: cca_base
 region: primary_menu
-weight: 0
+weight: 1
 provider: null
 plugin: 'system_menu_block:account'
 settings:
