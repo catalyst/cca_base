@@ -22,7 +22,7 @@ cd ../../../custom
 cp -r ../contrib/cca_base/subtheme $CUSTOM_ISLANDORA
 cd $CUSTOM_ISLANDORA
 for file in *cca_subtheme.*; do mv $file ${file//cca_subtheme/$CUSTOM_ISLANDORA}; done
-for file in config/*/*cca_subtheme.*; do mv $file ${file//cca_subtheme/$CUSTOM_ISLANDORA}; done
+for file in config/*/*cca_subtheme*; do mv $file ${file//cca_subtheme/$CUSTOM_ISLANDORA}; done
 
 # Remove create_subtheme.sh file, we do not need it in customized subtheme.
 rm scripts/create_subtheme.sh
