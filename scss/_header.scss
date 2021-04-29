@@ -27,13 +27,6 @@
     border-color: transparent;
   }
 
-  @include media-breakpoint-down(sm) {
-    .menu--account .nav-link {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-
   @include media-breakpoint-up(md) {
     .menu--main {
       margin-left: -0.5rem;
