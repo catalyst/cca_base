@@ -28,13 +28,35 @@
  *
  * @see template_preprocess_views_view_fields()
  *
+ * Add following to settings.php:
+ * $settings['twig_sandbox_whitelisted_methods'] = [
+ *   // Defaults:
+ *   'id',
+ *   'label',
+ *   'bundle',
+ *   'get',
+ *   '__toString',
+ *   'toString',
+ *   // Additions:
+ *   'toUrl',
+ *   'getValue',
+ *   'getString',
+ * ];
+ *
  * @ingroup themeable
  */
 #}
 {% import "@cca_base/views/views-view-fields.html.twig" as views_view_fields %}
 {% set entity = row._object.getValue() %}
 {# {% set url = entity.toUrl().toString() %} #}
-{# Define what shouldn't be displayed in extra fields table #}
+{#
+  Define what shouldn't be displayed in extra fields 
+  - title: Explicitly added in .search-main
+  - sfu_ui_related_thumbnail: Explicitly added in .search-thumbnail
+  - counter: Don't want to show
+  - field_description: Either description or excerpt is explicitly displayed in .search-main
+  - search_api_excerpt: Either description or excerpt is explicitly displayed in .search-main
+#}
 {%
   set other_fields = fields|without(
     'counter',
@@ -55,32 +77,31 @@
 {# {{ dump(entity.fields.field_edtf_date.getValue()) }} #}
 
 <div class="row">
-  {% if hasThumbnail %}
-    <div class="search-thumbnail col-12 col-md-3">
-      <a href="{{ entity.toUrl().toString() }}" title="View {{ entity.label }}">
-      {# {% if entity.bundle == "ac_record" %} #}
-        {{ views_view_fields.render_field(fields.cca_ui_related_thumbnail) }}
-        {{ views_view_fields.render_field(fields.field_media_image) }}
-      {# {% else %} #}
-        {# <img src="{{ theme_path }}/images/placeholder.png" alt="no image" /> #}
-      {# {% endif %} #}
-      </a>
-    </div>
-  {% endif %}
-
-  {% if hasThumbnail %}
-    <div class="search-main col-12 col-md-9">
-  {% else %}
-    <div class="search-main col-12">
-  {% endif %}
+  <div class="search-title col-12">
     {%- if not entity.isPublished() -%}
       <span class="node__status badge badge-warning" aria-label="Status message" role="contentinfo">
         <span class="visually-hidden">{%- trans %}This node is {% endtrans %}</span>{% trans %}Unpublished{% endtrans -%}
       </span>
     {%- endif -%}
     {{ views_view_fields.render_field(fields.title) }}
+  </div>
 
-    {# Show excerpt, or description when no excerpt #}
+  {% if hasThumbnail %}
+    <div class="search-thumbnail col-12 col-sm-3">
+      <a href="{{ entity.toUrl().toString() }}" title="View {{ entity.label }}">
+        {{ views_view_fields.render_field(fields.cca_ui_related_thumbnail) }}
+        {{ views_view_fields.render_field(fields.field_media_image) }}
+      </a>
+    </div>
+  {% endif %}
+
+  {% if hasThumbnail %}
+    <div class="search-main col-12 col-sm-9">
+  {% else %}
+    <div class="search-main col-12">
+  {% endif %}
+
+    {# Show either excerpt or description #}
     {% if fields.search_api_excerpt.raw %}
       {{ views_view_fields.render_field(fields.search_api_excerpt) }}
     {% else %}
@@ -89,6 +110,7 @@
 
     {{ views_view_fields.render_field(fields.field_tags) }}
 
+    {# Show other fields that are defined in the view #}
     {% for field in other_fields -%}
       {{ views_view_fields.render_field(field) }}
     {%- endfor %}
