@@ -11,13 +11,11 @@
        ...
        {
            "type": "vcs",
-           "url": "https://gitlab.catalyst.net.nz/islandora/cca-base.git"
+           "url": "https://github.com/catalyst/cca_base.git"
        },
        ...
    ]
    ```
-
-1. Run `composer require islandora/cca_base`. You will be asked for username and password. Find them in `pview -d devs sfu`.
 
 ### Create subtheme
 
