@@ -5,6 +5,6 @@
     "homepage": "https://gitlab.catalyst.net.nz/islandora/cca-base",
     "license": "GPL-2.0+",
     "require": {
-        "drupal/bootstrap_barrio": "^4.33.0"
+        "drupal/bootstrap_barrio": "^5.0.0"
     }
 }
