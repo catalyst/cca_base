@@ -1,6 +1,6 @@
 #header {
   .navbar-brand img {
-    height: 100px;
+    height: 50px;
   }
 
   .navbar-collapse {
@@ -17,7 +17,6 @@
     }
 
     &.is-active {
-      color: white;
       font-weight: 600;
       text-decoration: $link-hover-decoration;
     }
@@ -25,12 +24,6 @@
 
   .navbar-toggler {
     border-color: transparent;
-  }
-
-  @include media-breakpoint-up(md) {
-    .menu--main {
-      margin-left: -0.5rem;
-    }
   }
 }
 
@@ -53,14 +46,6 @@
   @include media-breakpoint-up(md) {
     input {
       width: 200px;
-    }
-  }
-}
-
-#block-archives-central-account-menu {
-  @include media-breakpoint-down(sm) {
-    .nav {
-    flex-direction: column;
     }
   }
 }
