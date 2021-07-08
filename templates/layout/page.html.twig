@@ -77,13 +77,16 @@
           {% if container_navbar %}
           <div class="container">
           {% endif %}
+            {{ page.top_header }}
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#CollapsingTopNavbar" aria-controls="CollapsingTopNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="CollapsingTopNavbar">
               {{ page.secondary_menu }}
-              {{ page.top_header }}
               {% if page.top_header_form %}
                 <div class="form-inline navbar-form float-right">
                   {{ page.top_header_form }}
                 </div>
               {% endif %}
+            </div>
           {% if container_navbar %}
           </div>
           {% endif %}
