@@ -1,8 +1,8 @@
 name: CCA Islandora Subtheme Starter Kit
 type: theme
 description: 'SASS starter kit for a CCA Islandora Subtheme.'
-version: 8.x-0.1
-core: 8.x
+version: 8.x-0.2
+core_version_requirement: ^8 || ^9
 base theme: cca_base
 
 libraries:
