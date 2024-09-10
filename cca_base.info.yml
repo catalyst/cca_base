@@ -1,8 +1,8 @@
 name: Catalyst Community Archives Islandora Base Theme
 type: theme
 description: 'Created with Bootstrap Barrio SubTheme SASS starter kit.'
-version: 8.x-0.26
-core_version_requirement: ^9 || ^10
+version: 8.x-0.27
+core_version_requirement: ^10 || ^11
 base theme: bootstrap_barrio
 
 libraries:
